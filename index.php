@@ -2,13 +2,21 @@
 
 require_once 'src/autoload.php';
 
-$endereco1 = new Endereco("CE","Pacatuba","Rua Pedro de Sá Roriz","118","Pavuna","61.809-125");
+$endereco1 = new Endereco
+("CE","Pacatuba","Rua Pedro de Sá Roriz","118","Pavuna","61.809-125");
 
+// Não posso mais usar a classe pesso conforme abaixo pois foi declarada como abstract
 // $pessoa1 = new Pessoa("Carlos",50, $endereco1);
 // $pessoa2 = new Pessoa("Jorge", 30, $endereco1);
 // $pessoa3 = new Pessoa("Jessica", 21, $endereco1);
 
-$funcionario1 = new Funcionario("Carlos Antonino C S", 40, $endereco1, "Programador", 3500);
+$funcionario1 = new Funcionario
+(
+"Carlos Antonino C S", 40, //dados da classe Pessoa
+ $endereco1, // dados da classe endereco
+ "Programador", 3500 // dados da classe funcionario
+);
+
 $cliente1 = new Cliente("Carlos Antonino C S", 40, $endereco1, "30/05/1972", 5000);
 
 echo "<pre>";
@@ -19,7 +27,7 @@ echo "<pre>";
 print_r($cliente1);
 echo "</pre>";
 
-echo "<h1>O numero de pessoas é: " . Pessoa::getnumDePessoas() . "</h1>";
+// echo "<h1>O numero de pessoas é: " . Pessoa::getnumDePessoas() . "</h1>";
 
 /*
 $pessoa1 -> nome = "Carlos";

@@ -5,7 +5,11 @@
         private string $cargo;
         private float $salario;
 
-        public function __construct(string $nome, int $idade, Endereco $endereco,string $cargo, float $salario)
+        public function __construct(
+                string $nome, int $idade, // dados da classe Pessoa
+                Endereco $endereco, // dados da classe Endereco
+                string $cargo, float $salario // dados desta classe
+                )
         {
             parent::__construct($nome, $idade, $endereco);
             $this -> cargo = $cargo;

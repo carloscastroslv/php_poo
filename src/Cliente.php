@@ -1,6 +1,6 @@
 <?php
 
-    class Cliente extends Pessoa
+    class Cliente extends Pessoa // Extend a classe e assim posso deixar Pessoa abstract e usar os dados nas classes filhas
     {
         private string $dataNascimento;
         private float $renda;

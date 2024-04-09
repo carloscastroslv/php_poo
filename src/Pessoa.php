@@ -5,16 +5,19 @@
         // atributos ou caracteristicas = variaveis
         private string $nome;
         private int $idade;
-        private Endereco $endereco;
+        private Endereco $endereco; // pegando dados da Classe Endereco
         protected float $desconto;
         private static int $numDePessoa = 0;
 
-        public function __construct(string $nome,int $idade,Endereco $endereco)
+        public function __construct
+        (string $nome,int $idade,
+        Endereco $endereco // Dados da classe Endereco
+        )
         {
             $this-> nome = $nome;
             $this-> idade = $idade;
             $this-> validaIdade($idade);
-            $this-> Endereco = $endereco;
+            $this-> Endereco = $endereco; // Vem da classe Endereco
             $this-> setDesconto();
             self::$numDePessoa++;
         }
