@@ -1,62 +1,35 @@
 <?php
 
-require_once 'src/autoload.php';
+require_once 'autoload.php';
 
-$endereco1 = new Endereco
-("CE","Pacatuba","Rua Pedro de Sá Roriz","118","Pavuna","61.809-125");
-
-// Não posso mais usar a classe pesso conforme abaixo pois foi declarada como abstract
-// $pessoa1 = new Pessoa("Carlos",50, $endereco1);
-// $pessoa2 = new Pessoa("Jorge", 30, $endereco1);
-// $pessoa3 = new Pessoa("Jessica", 21, $endereco1);
-
-$funcionario1 = new Funcionario
-(
-"Carlos Antonino C S", 40, //dados da classe Pessoa
- $endereco1, // dados da classe endereco
- "Programador", 3500 // dados da classe funcionario
-);
-
-$cliente1 = new Cliente("Carlos Antonino C S", 40, $endereco1, "30/05/1972", 5000);
+use Castro\Educa\Infraestrutura\Persistencia\CriadorConexao;
+use Castro\Educa\Infraestrutura\Repositorio\PdoRepositorioProduto;
+use Castro\Educa\Model\Produto;
 
 echo "<pre>";
-print_r($funcionario1);
+    // $conexao = CriadorConexao::criarConexao();
+    // var_dump($conexao);
+
+    $repositorio = new PdoRepositorioProduto(CriadorConexao::criarConexao());
+    // var_dump($repositorio);
+    
+    // $produto1 = new Produto(NULL, "Limâo", 5.00);
+    // $produto2 = new Produto(NULL, "Mamão", 3.00);
+    // $produto3 = new Produto(NULL, "Pera", 8.10);
+    // $produto4 = new Produto(NULL, "Jambo", 6.00);
+    // $produto5 = new Produto(NULL, "Morango", 3.00);
+    // // var_dump($produto1);
+
+    $repositorio->todosProdutos();
+    // $repositorio->salvar($produto1);
+    // $repositorio->salvar($produto3);
+    // $repositorio->salvar($produto4);
+    // $repositorio->salvar($produto5);
+    $repositorio->todosProdutos();
+ 
+    
+
 echo "</pre>";
 
-echo "<pre>";
-print_r($cliente1);
-echo "</pre>";
 
-// echo "<h1>O numero de pessoas é: " . Pessoa::getnumDePessoas() . "</h1>";
-
-/*
-$pessoa1 -> nome = "Carlos";
-$pessoa1 -> idade = 52;
-
-$pessoa2 -> nome = "Jose";
-$pessoa2 -> idade = 40;
-
-
-echo "<h1>Nome: $pessoa1->nome</h1>";
-echo "<h1>Idade: $pessoa1->idade</h1>";
-*/
-
-// $pessoa1-> setNome("Carlos");
-// $pessoa1-> setIdade(40);
-// $pessoa2-> setNome("Maria");
-// $pessoa2-> setIdade(32);
-// $pessoa3-> setNome("Jessica");
-// $pessoa3-> setIdade(21);
-
-// echo "<h1>Nome:  {$pessoa1->getNome()} </h1>";
-// echo "<h1>Idade: {$pessoa1->getIdade()} </h1>";
-// echo "<h1>Nome:  {$pessoa2->getNome()} </h1>";
-// echo "<h1>Idade: {$pessoa2->getIdade()} </h1>";
-// echo "<h1>Nome:  {$pessoa3->getNome()} </h1>";
-// echo "<h1>Idade: {$pessoa3->getIdade()} </h1>";
-
-// echo "<pre>";
-// var_dump($pessoa1);
-// var_dump($pessoa2);
-// var_dump($pessoa3);
-// echo "</pre>";
+// https://youtu.be/S4TRCGpPzcw?list=PLnex8IkmReXz6t1rqxB-W17dbvfSL1vfg&t=569

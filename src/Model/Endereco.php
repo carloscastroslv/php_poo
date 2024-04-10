@@ -1,4 +1,6 @@
 <?php   
+    namespace Castro\Educa\Model;
+
 
     class Endereco
     {

@@ -1,5 +1,8 @@
 <?php
 
+    namespace Castro\Educa\Model;
+
+
     class Funcionario extends Pessoa
     {
         private string $cargo;

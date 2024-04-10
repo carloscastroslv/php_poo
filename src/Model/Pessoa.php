@@ -1,5 +1,8 @@
 <?php
 
+     namespace Castro\Educa\Model;
+
+
      abstract class Pessoa
     {
         // atributos ou caracteristicas = variaveis

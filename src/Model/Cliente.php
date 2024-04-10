@@ -1,4 +1,6 @@
 <?php
+        
+    namespace Castro\Educa\Model;
 
     class Cliente extends Pessoa // Extend a classe e assim posso deixar Pessoa abstract e usar os dados nas classes filhas
     {
