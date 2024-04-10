@@ -51,10 +51,12 @@
 
                 public function readProduto(Produto $produto): array
                 {
-                    $sqlConsulta = "SELECT * FROM produto WHERE idProduto = id;";
+                    $sqlConsulta = "SELECT * FROM produto WHERE idProduto = :id;";
                     $stmt = $this -> conexao -> prepare($sqlConsulta);
-                    $stmt-> bindValue(':id', $produto-> getIdProduto(), PDO::PARAM_iNT);
+                    $stmt-> bindValue(':id', $produto-> getIdProduto(), PDO::PARAM_INT);
                     $stmt->execute();
+
+                    return $this-> hidratarListaProdutos($stmt);
 
                 } 
 
